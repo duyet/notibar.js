@@ -1,4 +1,5 @@
 function notiBar (opt) {
+
 	if (typeof opt == 'string') opt = { 'message': opt }
 
 	var settings = {
@@ -10,6 +11,10 @@ function notiBar (opt) {
 		'color': '#2895F1',
 		'bgColor': '#f0f9ff',
 		'borderBottomColor': '#96c4ea',
+
+		// setting 
+		cookie_key: '_notibar_dismiss_',
+		cookie_timeout_days: 7,
 	};
 
 	for (var i in opt) {
@@ -17,6 +22,29 @@ function notiBar (opt) {
          settings[i] = opt[i];
       }
    }
+
+   function createCookie(name,value,days) {
+	    var expires = "";
+	    if (days) {
+	        var date = new Date();
+	        date.setTime(date.getTime() + (days*24*60*60*1000));
+	        expires = "; expires=" + date.toUTCString();
+	    }
+	    document.cookie = name + "=" + value + expires + "; path=/";
+	}
+
+	function readCookie(name) {
+	    var nameEQ = name + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0;i < ca.length;i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	    }
+	    return null;
+	}
+
+	if (readCookie(settings.cookie_key) == 'ok') return;
 
     // Container 
 	var noti_container = document.createElement('div');
@@ -41,6 +69,7 @@ function notiBar (opt) {
 			if (notibar) {
 				notibar.style.display = 'none';
 			}
+			createCookie(settings.cookie_key, 'ok', settings.cookie_timeout_days);
 		});
 
 		noti_container.appendChild(noti_close);
