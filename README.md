@@ -4,7 +4,7 @@
 Lightweight notification bar, no dependency.
 
 ```html
-<script type="text/javascript" src="https://duyetdev.github.io/notibar.js/notibar.min.js"></script>
+<script type="text/javascript" src="//duyetdev.github.io/notibar.js/notibar.min.js"></script>
 <script type="text/javascript">
 	notiBar('<strong>notibar.js</strong> by <a href="http://duyetdev.com">duyetdev</a>  :))');
 </script>
@@ -17,7 +17,7 @@ See example: https://duyetdev.github.io/notibar.js/example.html
 1. Direct from github:
 
 	```html
-	<script type="text/javascript" src="https://duyetdev.github.io/notibar.js/notibar.min.js"></script>
+	<script type="text/javascript" src="//duyetdev.github.io/notibar.js/notibar.min.js"></script>
 	```
 
 2. NPM
