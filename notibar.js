@@ -44,6 +44,9 @@ function notiBar (opt) {
 		font-size: 13px; \
 		padding-top: 15px; \
 		color: #2895F1; \
+	} \
+	#duyetdev-top-notification-bar-container div.top-notification-bar a { \
+		color: #2895F1; \
 	}";
 
 	css += '#duyetdev-top-notification-bar-container div.top-notification-bar { '
