@@ -1,13 +1,3 @@
-Object.prototype.extend = function(obj) {
-   for (var i in obj) {
-      if (obj.hasOwnProperty(i)) {
-         this[i] = obj[i];
-      }
-   }
-
-   return this;
-};
-
 function notiBar (opt) {
 	if (typeof opt == 'string') opt = { 'message': opt }
 
@@ -17,8 +7,16 @@ function notiBar (opt) {
 		'font': 'sans-serif',
 		'fontSize': '13px',
 		'minHeight': '41px',
+		'color': '#2895F1',
+		'bgColor': '#f0f9ff',
+		'borderBottomColor': '#96c4ea',
+	};
 
-	}.extend(opt);
+	for (var i in opt) {
+      if (opt.hasOwnProperty(i)) {
+         settings[i] = opt[i];
+      }
+   }
 
 	var noti_container = document.createElement('div');
 	noti_container.id = 'duyetdev-top-notification-bar-container';
@@ -29,7 +27,6 @@ function notiBar (opt) {
 	noti_container.appendChild(noti_msg);
 
 	var css = "#duyetdev-top-notification-bar-container { \
-		background-color: #f0f9ff; \
 		border-bottom: 1px solid #96c4ea; \
 		display: block; \
 		position: fixed; \
@@ -44,21 +41,37 @@ function notiBar (opt) {
 	#duyetdev-top-notification-bar-container div.top-notification-bar { \
 		text-align: center; \
 		padding-top: 15px; \
-		color: #2895F1; \
-	} \
-	#duyetdev-top-notification-bar-container div.top-notification-bar a { \
-		color: #2895F1; \
 	}";
 
-	css += '#duyetdev-top-notification-bar-container { '
-		+ 'min-height: ' + parseFloat(settings.minHeight) + 'px;'
-		+ 'font-size: ' + parseFloat(settings.fontSize) + 'px;'
-		+' }';
+	var generate_css = function(name, css_object) {
+		var css_str = '' + name + '{ ';
+		for (var k in css_object) {
+			var v = css_object[k];
+			if (true == parseFloat(v)) {
+				css_str += k + ': ' + parseFloat(v) + 'px;';
+			} else {
+				css_str += k + ': ' + v + ';';
+			}
+		}
 
-	css += '#duyetdev-top-notification-bar-container div.top-notification-bar { '
-		+ 'font-family: ' + settings.font + ';'
-		+ 'font-size: ' + parseFloat(settings.fontSize) + 'px;'
-		+' }';
+		return css_str + '}';
+	}
+	
+	css += generate_css('#duyetdev-top-notification-bar-container', {
+		'min-height': settings.minHeight,
+		'background-color': settings.bgColor,
+		'border-bottom-color': settings.borderBottomColor,
+	});
+
+	css += generate_css('#duyetdev-top-notification-bar-container div.top-notification-bar', {
+		'font-family': settings.font,
+		'font-size': settings.fontSize,
+		'color': settings.color,
+	});
+
+	css += generate_css('#duyetdev-top-notification-bar-container div.top-notification-bar a', {
+		'color': settings.color,
+	});
 
 	document.addEventListener("DOMContentLoaded", function(event) { 
 		var body = document.body || document.getElementsByTagName('body')[0];
