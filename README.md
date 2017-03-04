@@ -1,7 +1,7 @@
 ![](example.png)
 
 # Notibar.js
-Notification bar on top.
+Lightweight notification bar, no dependency.
 
 ```html
 <script type="text/javascript" src="https://duyetdev.github.io/notibar.js/notibar.js"></script>
