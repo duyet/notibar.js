@@ -15,6 +15,8 @@ function notiBar (opt) {
 		'message': '',
 		'closeButton': false,
 		'font': 'sans-serif',
+		'fontSize': '13px',
+		'minHeight': '41px',
 
 	}.extend(opt);
 
@@ -41,7 +43,6 @@ function notiBar (opt) {
 	} \
 	#duyetdev-top-notification-bar-container div.top-notification-bar { \
 		text-align: center; \
-		font-size: 13px; \
 		padding-top: 15px; \
 		color: #2895F1; \
 	} \
@@ -49,9 +50,15 @@ function notiBar (opt) {
 		color: #2895F1; \
 	}";
 
+	css += '#duyetdev-top-notification-bar-container { '
+		+ 'min-height: ' + parseFloat(settings.minHeight) + 'px;'
+		+ 'font-size: ' + parseFloat(settings.fontSize) + 'px;'
+		+' }';
+
 	css += '#duyetdev-top-notification-bar-container div.top-notification-bar { '
-		+ 'font-family: ' + settings.font
-		+' }'
+		+ 'font-family: ' + settings.font + ';'
+		+ 'font-size: ' + parseFloat(settings.fontSize) + 'px;'
+		+' }';
 
 	document.addEventListener("DOMContentLoaded", function(event) { 
 		var body = document.body || document.getElementsByTagName('body')[0];

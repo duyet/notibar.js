@@ -1,0 +1,22 @@
+{
+  "name": "notibar.js",
+  "version": "1.0.0",
+  "description": "Notification bar on top.",
+  "main": "notibar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duyetdev/notibar.js.git"
+  },
+  "keywords": [
+    "notibar"
+  ],
+  "author": "Van-Duyet Le <me@duyet.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duyetdev/notibar.js/issues"
+  },
+  "homepage": "https://github.com/duyetdev/notibar.js#readme"
+}
