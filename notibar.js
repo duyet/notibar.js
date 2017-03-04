@@ -3,7 +3,7 @@ function notiBar (opt) {
 
 	var settings = {
 		'message': '',
-		'closeButton': false,
+		'closeButton': true,
 		'font': 'sans-serif',
 		'fontSize': '13px',
 		'minHeight': '41px',
@@ -18,13 +18,33 @@ function notiBar (opt) {
       }
    }
 
+    // Container 
 	var noti_container = document.createElement('div');
 	noti_container.id = 'duyetdev-top-notification-bar-container';
+	
+	// Message
 	var noti_msg = document.createElement('div');
 	noti_msg.className = 'top-notification-bar';
 	noti_msg.innerHTML = settings.message;
-
 	noti_container.appendChild(noti_msg);
+
+	// Close
+	if (settings.closeButton) {
+		var noti_close = document.createElement('a');
+		var noti_close_img = document.createElement('img');
+		
+		noti_close.className = 'top-notification-bar-dismiss'
+		noti_close_img.src = 'https://2.bp.blogspot.com/-E8HfTec8iS8/WLptC-Qe99I/AAAAAAAAjz0/qxyVCyhcR2YOiGKx9isPzrvzsNB_ZEVzgCK4B/s400/rsz_close-button-png-23.png';
+		noti_close.appendChild(noti_close_img);
+		noti_close.addEventListener('click', function() {
+			var notibar = document.getElementById('duyetdev-top-notification-bar-container');
+			if (false != notibar) {
+				notibar.style.display = 'none';
+			}
+		});
+
+		noti_container.appendChild(noti_close);
+	}
 
 	var css = "#duyetdev-top-notification-bar-container { \
 		border-bottom: 1px solid #96c4ea; \
@@ -37,6 +57,18 @@ function notiBar (opt) {
 		min-height: 41px; \
 		width: 100%; \
 		line-height: 11px; \
+	} \
+	#duyetdev-top-notification-bar-container .top-notification-bar-dismiss { \
+		position: absolute; \
+		right: 15px; \
+		top: 50%; \
+		margin-top: -7px; \
+		text-decoration: none; \
+		cursor: pointer; \
+	} \
+	#duyetdev-top-notification-bar-container .top-notification-bar-dismiss img { \
+		width: 10px; \
+		height: 10px; \
 	} \
 	#duyetdev-top-notification-bar-container div.top-notification-bar { \
 		text-align: center; \
@@ -56,7 +88,7 @@ function notiBar (opt) {
 
 		return css_str + '}';
 	}
-	
+
 	css += generate_css('#duyetdev-top-notification-bar-container', {
 		'min-height': settings.minHeight,
 		'background-color': settings.bgColor,

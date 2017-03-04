@@ -17,9 +17,13 @@ See example: https://duyetdev.github.io/notibar.js/example.html
 ```js
 notiBar({
 	message: '<strong>notibar.js</strong> by <a href="http://duyetdev.com">duyetdev</a>  :))',
-	'font': 'sans-serif',
-	'fontSize': '13px',
-	'minHeight': '41px',
+	closeButton: true,
+	font: 'sans-serif',
+	fontSize: '13px',
+	minHeight: '41px',
+	color: '#2895F1',
+	bgColor: '#f0f9ff',
+	borderBottomColor: '#96c4ea',
 });
 ```
 
