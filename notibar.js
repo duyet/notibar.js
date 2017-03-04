@@ -38,7 +38,7 @@ function notiBar (opt) {
 		noti_close.appendChild(noti_close_img);
 		noti_close.addEventListener('click', function() {
 			var notibar = document.getElementById('duyetdev-top-notification-bar-container');
-			if (false != notibar) {
+			if (notibar) {
 				notibar.style.display = 'none';
 			}
 		});
@@ -79,7 +79,7 @@ function notiBar (opt) {
 		var css_str = '' + name + '{ ';
 		for (var k in css_object) {
 			var v = css_object[k];
-			if (true == parseFloat(v)) {
+			if (parseFloat(v)) {
 				css_str += k + ': ' + parseFloat(v) + 'px;';
 			} else {
 				css_str += k + ': ' + v + ';';
