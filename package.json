@@ -5,7 +5,7 @@
   "main": "notibar.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/uglifyjs notibar.js --output notibar.min.js --compress --mangle"
+    "build": "./node_modules/.bin/uglifyjs notibar.js --output notibar.min.js --compress --mangle --source-map notibar.js.map"
   },
   "repository": {
     "type": "git",

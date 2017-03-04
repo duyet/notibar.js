@@ -4,7 +4,7 @@
 Lightweight notification bar, no dependency.
 
 ```html
-<script type="text/javascript" src="https://duyetdev.github.io/notibar.js/notibar.js"></script>
+<script type="text/javascript" src="https://duyetdev.github.io/notibar.js/notibar.min.js"></script>
 <script type="text/javascript">
 	notiBar('<strong>notibar.js</strong> by <a href="http://duyetdev.com">duyetdev</a>  :))');
 </script>
@@ -25,6 +25,21 @@ notiBar({
 	bgColor: '#f0f9ff',
 	borderBottomColor: '#96c4ea',
 });
+```
+
+# Build your own
+
+Clone a copy of the  git repo by running:
+
+```
+git clone https://github.com/duyetdev/notibar.js
+```
+
+Enter the **notibar.js** directory and run the build script:
+
+```
+cd notibar.js && npm install
+npm run build
 ```
 
 # How to contribute
