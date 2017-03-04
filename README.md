@@ -12,7 +12,27 @@ Lightweight notification bar, no dependency.
 
 See example: https://duyetdev.github.io/notibar.js/example.html
 
-# More custom
+# Installation 
+
+1. Direct from github:
+
+	```html
+	<script type="text/javascript" src="https://duyetdev.github.io/notibar.js/notibar.min.js"></script>
+	```
+
+2. NPM
+
+	```
+	npm install --save notibar.js 
+	```
+
+3. Bower 
+
+	```
+	bower install --save notibar
+	```
+
+# More options
 
 ```js
 notiBar({
