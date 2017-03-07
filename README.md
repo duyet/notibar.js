@@ -14,10 +14,9 @@ See example: https://duyetdev.github.io/notibar.js/example.html
 
 # Installation 
 
-1. Direct from github:
-
+1. CDN
 	```html
-	<script type="text/javascript" src="//duyetdev.github.io/notibar.js/notibar.min.js"></script>
+	<script src="//cdn.jsdelivr.net/notibar.js/1.0/notibar.min.js"></script>
 	```
 
 2. NPM
