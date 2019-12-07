@@ -1,10 +1,10 @@
 {
-  "name": "notibar.js",
+  "name": "@duyetdev/notibar.js",
   "version": "1.0.0",
   "description": "Notification bar on top.",
   "main": "notibar.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"no test\" && exit 0",
     "build": "./node_modules/.bin/uglifyjs notibar.js --output notibar.min.js --compress --mangle --source-map notibar.js.map"
   },
   "repository": {
