@@ -4,13 +4,13 @@
 Lightweight notification bar, no dependency.
 
 ```html
-<script type="text/javascript" src="//duyetdev.github.io/notibar.js/notibar.min.js"></script>
+<script type="text/javascript" src="//duyet.github.io/notibar.js/notibar.min.js"></script>
 <script type="text/javascript">
-	notiBar('<strong>notibar.js</strong> by <a href="http://duyetdev.com">duyetdev</a>  :))');
+	notiBar('<strong>notibar.js</strong> by <a href="http://duyet.net">duyet</a>  :))');
 </script>
 ```
 
-See example: https://duyetdev.github.io/notibar.js/example.html
+See example: https://duyet.github.io/notibar.js/example.html
 
 # Installation 
 
@@ -51,7 +51,7 @@ notiBar({
 Clone a copy of the  git repo by running:
 
 ```
-git clone https://github.com/duyetdev/notibar.js
+git clone https://github.com/duyet/notibar.js
 ```
 
 Enter the **notibar.js** directory and run the build script:
