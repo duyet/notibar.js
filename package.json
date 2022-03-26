@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/duyetdev/notibar.js#readme",
   "devDependencies": {
-    "uglify-js": "3.10.0"
+    "uglify-js": "3.15.3"
   }
 }
